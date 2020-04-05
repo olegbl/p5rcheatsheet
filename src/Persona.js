@@ -57,7 +57,7 @@ function Element({element, x, y, status}) {
           zIndex: 100,
         }}>
         {status
-          .replace('ab', 'Dm')
+          .replace('ab', 'Dr')
           .replace('rs', 'Str')
           .replace('rp', 'Rpl')
           .replace('wk', 'Wk')
@@ -70,6 +70,13 @@ function Element({element, x, y, status}) {
 
 function Skill({skill, name, level}) {
   const [expanded, setExpanded] = React.useState(false);
+  const element = skill.element
+    .replace('phys', 'physical')
+    .replace('psy', 'psychic')
+    .replace('trait', 'passive') // not correct, but don't have an icon for trait
+    .split('')
+    .map((c, i) => (i === 0 ? c.toUpperCase() : c))
+    .join('');
 
   return (
     <div onClick={() => setExpanded(value => !value)}>
@@ -80,13 +87,8 @@ function Skill({skill, name, level}) {
           width: '2rem',
           marginRight: '1rem',
         }}
-        src={
-          './skills/' +
-          skill.element.slice(0, 1).toUpperCase() +
-          skill.element.slice(1).toLowerCase() +
-          '.png'
-        }
-        alt={skill.element}
+        src={'./skills/' + element + '.png'}
+        alt={element}
       />
       <div
         style={{
@@ -116,7 +118,7 @@ function Skill({skill, name, level}) {
                 color: '#FF0000',
                 marginLeft: '0.5rem',
               }}>
-              {skill.element === 'physical'
+              {element === 'Physical'
                 ? skill.cost + '% hp'
                 : skill.cost / 100 + ' sp'}
             </span>
@@ -154,6 +156,7 @@ export default function Persona({persona}) {
       </div>
       {elements.map(([element, x, y], elementIndex) => (
         <Element
+          key={element}
           element={element}
           x={x}
           y={y}
@@ -162,7 +165,12 @@ export default function Persona({persona}) {
       ))}
       <Section label="Skills" />
       {Object.keys(persona.skills).map(name => (
-        <Skill skill={skills[name]} name={name} level={persona.skills[name]} />
+        <Skill
+          key={name}
+          skill={skills[name]}
+          name={name}
+          level={persona.skills[name]}
+        />
       ))}
     </div>
   );

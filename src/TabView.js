@@ -101,7 +101,7 @@ export default function TabView({tab: selectedTabID, tabs}) {
         flex: 1,
       }}>
       {tabs.map(tab => (
-        <Tab tab={tab} selected={tab.id === selectedTabID} />
+        <Tab key={tab.id} tab={tab} selected={tab.id === selectedTabID} />
       ))}
     </div>
   );
