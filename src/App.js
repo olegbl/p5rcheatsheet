@@ -6,7 +6,6 @@ import Confidants from './Confidants';
 import Personas from './Personas';
 
 // TODO:
-// * persona compendium
 // * negotiation answers (e.g. https://github.com/joyce-chen/persona5-negotiation)
 
 const TABS = [
