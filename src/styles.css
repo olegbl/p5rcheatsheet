@@ -17,7 +17,7 @@ body,
 }
 
 #root {
-  min-height: 100vh; /* collapsible URL bars in browsers make tabs disappear -___- */
+  height: 100vh; /* collapsible URL bars in browsers make tabs disappear -___- */
   height: -webkit-fill-available;
   display: flex;
   flex-direction: column;
