@@ -1,0 +1,24 @@
+@font-face {
+  font-family: 'P5Font';
+  src: url('./p5font.ttf');
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  box-sizing: border-box;
+  font-size: 5vw;
+  font-family: P5Font, Helvetica neue, roboto;
+  background-color: #000000;
+  overflow: hidden;
+}
+
+#root {
+  height: 100vh; /* collapsible URL bars in browsers make tabs disappear -___- */
+  height: -webkit-fill-available;
+  display: flex;
+  flex-direction: column;
+}
