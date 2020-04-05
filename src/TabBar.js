@@ -17,7 +17,7 @@ export default function TabBar({tabs, tab: selectedTabID, onChangeTab}) {
               flex: 1,
               paddingTop: 8,
               paddingBottom: 8,
-              fontSize: 32,
+              fontSize: '1.5rem',
               textAlign: 'center',
               whiteSpace: 'nowrap',
               color: selected ? '#FFFFFF' : '#FF0000',
