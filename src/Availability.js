@@ -29,7 +29,7 @@ export default function Availability({confidant}) {
                 key={time}
                 style={{
                   display: 'inline-block',
-                  color: availability ? '#FFFFFF' : '#FF0000',
+                  color: availability ? '#FFFFFF' : '#666666',
                   marginRight: 16,
                 }}>
                 {time}

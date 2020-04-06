@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import Title from './Title';
 import Navigation from './Navigation';
 import {TabContext} from './TabViewContext';
+import {useOnEvent} from './Events';
 
 function Tab({tab, selected}) {
   const [{index, screens}, setState] = React.useState({
@@ -30,6 +31,20 @@ function Tab({tab, selected}) {
   const views = React.useMemo(() => [tab, ...screens], [tab, screens]);
   const labels = React.useMemo(() => views.map(({label}) => label), [views]);
   const isNavigationVisible = views.length > 1;
+
+  const onRefreshTab = React.useCallback(
+    event => {
+      if (event.tab.id === tab.id) {
+        setState(oldState => ({
+          ...oldState,
+          index: 0,
+          screens: [],
+        }));
+      }
+    },
+    [tab.id, setState],
+  );
+  useOnEvent('tab.refresh', onRefreshTab);
 
   useEffect(() => {
     setState(oldState => ({

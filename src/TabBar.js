@@ -1,4 +1,5 @@
 import React from 'react';
+import {dispatch} from './Events';
 
 export default function TabBar({tabs, tab: selectedTabID, onChangeTab}) {
   return (
@@ -26,7 +27,11 @@ export default function TabBar({tabs, tab: selectedTabID, onChangeTab}) {
                 ? '-2px -2px 0 #000000, 2px -2px 0 #000000, -2px 2px 0 #000000, 2px 2px 0 #000000'
                 : '-2px -2px 0 #000000, 2px -2px 0 #000000, -2px 2px 0 #000000, 2px 2px 0 #000000',
             }}
-            onClick={() => onChangeTab(tab.id)}>
+            onClick={
+              selected
+                ? () => dispatch('tab.refresh', {tab})
+                : () => onChangeTab(tab.id)
+            }>
             {tab.label}
           </div>
         );

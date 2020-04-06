@@ -1,9 +1,5 @@
 import React from 'react';
-import {randomTransform} from './utils';
-
-const SEEDS = new Array(1000)
-  .fill(null)
-  .map(() => [Math.random(), Math.random(), Math.random()]);
+import {getSeedsForString, randomTransform} from './utils';
 
 export default function Navigation({index, labels, onChangeIndex}) {
   return (
@@ -38,9 +34,7 @@ export default function Navigation({index, labels, onChangeIndex}) {
             fontWeight: 'bold',
             transform: randomTransform(
               0,
-              SEEDS[i][0],
-              SEEDS[i][1],
-              SEEDS[i][2],
+              ...getSeedsForString('nav' + Math.sqrt(i * 3)),
             ),
             perspective: '3rem',
           }}
