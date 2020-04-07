@@ -65,12 +65,13 @@ export default function Confidants() {
             <div
               style={{
                 position: 'absolute',
-                top: 0,
-                left: 0,
-                right: 0,
-                padding: 10,
+                top: '0.1rem',
+                left: '0.1rem',
+                right: '0.1rem',
+                overflow: 'hidden',
+                textOverflow: 'ellipsis',
                 textAlign: 'center',
-                fontSize: '1.3rem',
+                fontSize: '1.6rem',
                 color: '#FFFFFF',
                 textShadow:
                   '-2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000',
