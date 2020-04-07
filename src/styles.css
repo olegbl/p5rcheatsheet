@@ -17,8 +17,11 @@ body,
 }
 
 #root {
-  height: 100vh; /* collapsible URL bars in browsers make tabs disappear -___- */
-  height: -webkit-fill-available;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   display: flex;
   flex-direction: column;
 }
