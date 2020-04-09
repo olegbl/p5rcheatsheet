@@ -404,7 +404,7 @@ export const confidants = [
       },
       {
         label: 'Rank 6',
-        note: '',
+        note: 'Locked until September 19',
         responses: [
           [
             'You wanted to talk? +0',
@@ -493,7 +493,7 @@ export const confidants = [
       },
       {
         label: 'Rank 9',
-        note: '',
+        note: 'Must be reached by November 17 to obtain rank 10',
         responses: [
           ['Yeah. +0', 'Kind of. +0'],
           [
@@ -505,7 +505,7 @@ export const confidants = [
       },
       {
         label: 'Rank MAX',
-        note: 'Story Progression',
+        note: 'Story progression, unlocks 3rd Semester',
         responses: [],
       },
     ],
@@ -681,7 +681,7 @@ export const confidants = [
       },
       {
         label: 'Rank 8',
-        note: '',
+        note: 'Requires Mementos Target completion',
         responses: [
           ['Miwa-chan is alive. +0', 'Oyamada lied to you. +0'],
           [
@@ -916,7 +916,7 @@ export const confidants = [
       },
       {
         label: 'Rank 8',
-        note: '',
+        note: 'Requires Mementos Target completion',
         responses: [
           ['He reflected on his actions. +0', 'Aren’t you happy? +0'],
           ['Did I? Can’t remember. +0', 'Uh, nope. +0'],
@@ -2105,7 +2105,7 @@ export const confidants = [
       },
       {
         label: 'Rank 8',
-        note: '',
+        note: 'Requires Mementos Target completion',
         responses: [
           ['I had no idea. +2', 'I know. +3'],
           [
@@ -2360,7 +2360,7 @@ export const confidants = [
       },
       {
         label: 'Rank 8',
-        note: '',
+        note: 'Requires Mementos Target completion',
         responses: [
           ['It’s not impossible. +0', 'I dunno. +2', 'He’s matured. +0'],
           [
@@ -4189,7 +4189,7 @@ export const confidants = [
       },
       {
         label: 'Rank 8',
-        note: '',
+        note: 'Requires Mementos Target completion',
         responses: [
           [
             'Maybe… +2',
@@ -4535,7 +4535,7 @@ export const confidants = [
       {
         label: 'Rank 1',
         note:
-          'How to Unlock: After completing the second dungeon, you will receive a scene a couple days later with Yuuki and Ryuji regarding a maid call-service. You will be able to do this at night by talking to Yuuki in Shibuya. After this nighttime event, approach Kawakami at school the next day where she’s getting an ear full from Ms. Chouno. Help her out of this situation and she will give you a number to call at night from the phone at the Leblanc Cafe that will begin the Temperance storyline.',
+          'How to Unlock: After completing the second dungeon, you will receive a scene a couple days later (5/24) with Yuuki and Ryuji regarding a maid call-service. You will be able to do this at night by talking to Yuuki in Shibuya. After this nighttime event, approach Kawakami at school the next day where she’s getting an ear full from Ms. Chouno. Help her out of this situation and she will give you a number to call at night from the phone at the Leblanc Cafe that will begin the Temperance storyline.',
         responses: [
           [
             'Yeah, I get it. +3',
@@ -4727,7 +4727,7 @@ export const confidants = [
       },
       {
         label: 'Rank 9',
-        note: '',
+        note: 'Requires Mementos Target completion',
         responses: [
           [
             'Nonsense. +3',
@@ -4976,7 +4976,7 @@ export const confidants = [
       },
       {
         label: 'Rank 9',
-        note: '',
+        note: 'Requires Mementos Target completion',
         responses: [
           [
             'I’m glad to hear that. +3',
