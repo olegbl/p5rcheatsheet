@@ -113,5 +113,22 @@ JSON.stringify(
         .slice(0, 2)
         .map(td => $(td).text()),
     )
-    .filter(([date, answer]) => date.match(/^[a-zA-Z]+ [0-9]+$/) != null),
+    .reduce(
+      (rows, [date, answer]) =>
+        date !== ''
+          ? [...rows, [date, answer]]
+          : [
+              ...rows.slice(0, -1),
+              ...rows
+                .slice(-1)
+                .map(([date, ...answers]) => [date, ...answers, answer]),
+            ],
+      [],
+    )
+    .filter(([date]) => date.match(/^([a-zA-Z]+) ([0-9]+)$/) != null)
+    .map(([date, ...answers]) => [
+      date.match(/^([a-zA-Z]+) ([0-9]+)$/)[1].replace('Sep', 'September'),
+      date.match(/^([a-zA-Z]+) ([0-9]+)$/)[2],
+      ...answers,
+    ]),
 );
