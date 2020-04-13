@@ -79,7 +79,11 @@ function Skill({skill, name, level}) {
     .join('');
 
   return (
-    <div onClick={() => setExpanded(value => !value)}>
+    <div
+      style={{
+        whiteSpace: 'nowrap',
+      }}
+      onClick={() => setExpanded(value => !value)}>
       <img
         style={{
           display: 'inline-block',
@@ -95,6 +99,7 @@ function Skill({skill, name, level}) {
           display: 'inline-block',
           color: '#FFFFFF',
           fontSize: '1.5rem',
+          whiteSpace: 'normal',
         }}>
         {name}
         <span
@@ -102,7 +107,7 @@ function Skill({skill, name, level}) {
             color: '#AAAAAA',
             marginLeft: '1rem',
           }}>
-          Lv{level}
+          {level === null ? 'Trait' : level === 0 ? 'Innate' : `Lv${level}`}
         </span>
       </div>
       {!expanded ? null : (
@@ -110,6 +115,7 @@ function Skill({skill, name, level}) {
           style={{
             fontSize: '1rem',
             color: '#AAAAAA',
+            whiteSpace: 'normal',
           }}>
           {skill.effect}
           {skill.cost == null ? null : (
@@ -164,6 +170,7 @@ export default function Persona({persona}) {
         />
       ))}
       <Section label="Skills" />
+      <Skill skill={skills[persona.trait]} name={persona.trait} level={null} />
       {Object.keys(persona.skills).map(name => (
         <Skill
           key={name}
